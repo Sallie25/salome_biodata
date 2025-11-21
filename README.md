@@ -94,6 +94,3 @@ This program helps beginners understand:
 * Nested data structures
 * Conditional logic
 * Title-casing and string handling
-
----CSV
-Just let me know!

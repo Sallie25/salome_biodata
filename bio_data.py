@@ -1,14 +1,31 @@
-flag = True                     # Controls the loop; stays True until manually turned off
-count = 10                      # Number of iterations allowed (10 people)
-demographics = {}               # Dictionary to store all collected data
+# Controls the loop; stays True until manually turned off
+flag = True 
 
-while flag:                     # Loop continues while flag is True
-  count -= 1                    # Reduce count at the start of each loop
+# Number of iterations allowed (10 people)                    
+count = 10    
 
-  if count < 1:                 # If count goes below 1, stop the loop
+ # Dictionary to store all collected data                  
+demographics = {}              
+
+# Loop continues while flag is True
+while flag:  
+  
+# Reduce count at the start of each loop                  
+  count -= 1                    
+
+# If count goes below 1, stop the loop
+  if count < 1:                 
     flag = False
 
+# Get and format name
+  name = input("Enter your name: ").title()      
 
+# Age received as string
+  age = input("Enter your age: ")    
+
+ # Check if age is a valid whole number              
+  if not age.isdigit():                         
+        print("Please enter a whole number")
   name = input("Enter your name: ").title()      # Receives and format name
 
   age = input("Enter your age: ")                # Age received as string
@@ -16,7 +33,11 @@ while flag:                     # Loop continues while flag is True
         print("Please enter a whole number")
         continue                                 # Skip to next loop iteration if true.
 
-  age = int(age)                                 # Convert age to integer
+        # Skip to next loop iteration if invalid input
+        continue    
+                               
+    # Convert age to integer
+  age = int(age)                                 
 
   # Determine age group based on numeric age value
   if 3 <= age <= 12:

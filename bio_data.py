@@ -26,6 +26,12 @@ while flag:
  # Check if age is a valid whole number              
   if not age.isdigit():                         
         print("Please enter a whole number")
+  name = input("Enter your name: ").title()      # Receives and format name
+
+  age = input("Enter your age: ")                # Age received as string
+  if not age.isdigit():                          # Check if age is a valid whole number. #This helps us deal with situations where user enters age as a float
+        print("Please enter a whole number")
+        continue                                 # Skip to next loop iteration if true.
 
         # Skip to next loop iteration if invalid input
         continue    
@@ -33,22 +39,22 @@ while flag:
     # Convert age to integer
   age = int(age)                                 
 
-  # Determine age group based on numeric range
+  # Determine age group based on numeric age value
   if 3 <= age <= 12:
-      group = "Child"
+      grouped_age_range = "Child"
   elif 13 <= age <= 19:
-      group = "Teenager"
+      grouped_age_range = "Teenager"
   elif 20 <= age <= 39:
-      group = "Young Adult"
+      grouped_age_range = "Young Adult"
   elif 40 <= age <= 64:
-      group = "Middle Aged"
+      grouped_age_range = "Middle Aged"
   elif age >= 65:
-      group = "Senior"
+      grouped_age_range = "Senior"
   else:
-      group = "Invalid age range (too young)"    # Handles ages below 3
+      grouped_age_range = "Invalid age range"    # Handles ages below 3
 
-  gender =  input("Enter your gender: ").title() # Capture and format gender
+  gender =  input("Enter your gender: ").title() # Captures and format gender
  
-  individual_info = [age,group,gender]           # Store person's info in a list
+  individual_info = [age,grouped_age_range,gender]           # Store person's info in a list
   demographics[name] = individual_info           # Save to dictionary using name as the key
 
